@@ -43,8 +43,7 @@ export function Category() {
                         categoryArr.map(item => {
                             return (
                                 <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.name}</td>
+                                    <td>{item.title}</td>
                                     <td><button type="button">Delete</button></td>
                                 </tr>
                             )

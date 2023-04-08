@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
-import categoryReducer from "./categorySlice"; 
 export const categorySlice = createSlice({
     name: "counter",
     initialState: {
         isLoading: false,
-        data: [{id: '1', title: 'test 1'}]
+        data: [{id: '1', name: 'test 1'}]
     }, // giá trị bắt đầu
     reducers: { // mục đích các hàm reducers: set lại giá trị cho state bên trên này
         startLoading: (state) => {
@@ -18,4 +17,10 @@ export const categorySlice = createSlice({
 });
 
 export const { startLoading, setData } = categorySlice.actions;
+
+// redux thunk - middleware - goi async
+export const searchCategoryThunk = () => (dispatch, getState) => { // getState đọc dữ liệu lưu trong store
+    dispatch(startLoading());
+};
+
 export default categorySlice.reducer;

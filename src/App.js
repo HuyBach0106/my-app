@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { useAuth } from "./hook/useAuth";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { CategoryRedux } from "./pages/CategoryRedux";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
               <Route index element={<Navigate to="/dashboard/category" />} />
               <Route path="category" element={<Category />} />
               <Route path="person" element={<Person />} />
+              <Route path="category-redux" element={<CategoryRedux />} />
             </Route>
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="/hello/:name" element={<Hello />} />
@@ -74,6 +76,9 @@ function Menu() {
       </li>
       <li>
         <Link to={"/dashboard/category"}>Category</Link>
+      </li>
+      <li>
+        <Link to={"/dashboard/category-redux"}>Category Redux</Link>
       </li>
       <li>
         <Link to={"/dashboard/person"}>Person</Link>
